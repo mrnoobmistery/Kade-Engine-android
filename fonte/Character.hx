@@ -30,8 +30,26 @@ class Character extends FlxSprite
 
 		switch (curCharacter)
 		{
+			case 'sonicLordX':
+				frames = Paths.getSparrowAtlas('characters/SONIC_X');
+				animation.addByPrefix('idle', 'X_Idle', 24, false);
+				animation.addByPrefix('singUP', 'X_Up', 24, false);
+				animation.addByPrefix('singDOWN', 'X_Down', 24, false);
+				animation.addByPrefix('singLEFT', 'X_Left', 24, false);
+				animation.addByPrefix('singRIGHT', 'X_Right', 24, false);
+
+				addOffset('idle', -18, 0);
+				addOffset("singUP", 34, 121);
+				addOffset("singRIGHT", -86, 40);
+				addOffset("singLEFT", 17, 20);
+				addOffset("singDOWN", 77, -21);
+
+				setGraphicSize(Std.int(width * 1.2));
+
+				updateHitbox();	
 			case 'gf':
-				// GIRLFRIEND CODE
+				
+				// CÓDIGO NAMORADA
 				tex = Paths.getSparrowAtlas('characters/GF_assets');
 				frames = tex;
 				animation.addByPrefix('cheer', 'GF Cheer', 24, false);
